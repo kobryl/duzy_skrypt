@@ -50,12 +50,23 @@ main() {
 				if [ -z $OPCJA ]
 				then
 					OPCJA=`zenity --list --text "Opcje start i stop wymagają uprawnień administratora" --column=Opcje "${OPTIONS[@]}" --height 370`
-					RESULT=`./$ODP $OPCJA`
-					OPCJA=""
+					if [ -z $OPCJA ]
+					then
+						RESULT="Nie wybrano żadnej opcji"
+					elif [ $? -eq 0 ]
+					then
+						RESULT=""
+					else
+						RESULT=`./$ODP $OPCJA`
+						OPCJA=""
+					fi
 				else
 					RESULT=`./$ODP $OPCJA`
 				fi
-				zenity --info --title "Wynik operacji" --text "$RESULT"
+				if [[ -n $RESULT ]]
+				then
+					zenity --info --title "Wynik operacji" --text "$RESULT"
+				fi
 			fi
 		else
 			zenity --info --title "Komunikat" --text "Anulowano"
@@ -85,7 +96,7 @@ do
 				exit 1
 			fi
 			;;
-		:) 
+		:)
 			echo "Opcja -${OPTARG} wymaga argumentu"
 			abnormal
 			exit 1
