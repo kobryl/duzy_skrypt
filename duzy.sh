@@ -35,7 +35,7 @@ pomoc() {
 	echo "-v			wyświetl wersję"
 	echo "-o status|start|stop	tryb ze zdefiniowaną opcją"
 	echo ""
-	echo "Więcej informacji znajduje się w manualu (man duzy.sh)."
+	echo "Więcej informacji znajduje się w manualu (man duzy)."
 }
 main() {
 	while [ $EXIT -eq 0 ]
