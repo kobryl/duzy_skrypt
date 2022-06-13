@@ -5,11 +5,19 @@ duzy.sh - służy do uruchamiania demonów z katalogu .B /etc/init.d
 .B duzy.sh
 .PP
 .BI duzy.sh " -o status"
+.PP
+.BI duzy.sh " -d apache2 -o start"
 .SH DESCRIPTION
 .B duzy.sh
 wyświetla okno dialogowe zenity z listą demonów. Po dokonaniu wyboru przez użytkownika, jeśli nie została podana opcja -o, użytkownik wybiera z listy operację do wykonania, następnie podejmowana jest próba jej wykonania. Komunikaty są przekierowywane do okna informacyjnego zenity. Następnie wyświetlane jest początkowe okno.
  W przypadku anulowania lub zamknięcia okna wyboru, skrypt kończy działanie.
 .SH OPTIONS
+.TP
+.BI -d " DEMON"
+działanie skryptu w trybie tekstowym, wymaga użycia opcji 
+.B -o,
+której argument zostanie wykonany na 
+.I demonie
 .TP
 .BI -o " start|stop|status"
 ustawienie wybranej operacji na czas działania skryptu
