@@ -1,0 +1,27 @@
+.TH man 1 "13.06.2022" "1306" "duzy.sh man page"
+.SH NAME
+duzy.sh - służy do uruchamiania demonów z katalogu .B /etc/init.d
+.SH SYNOPSIS
+.B duzy.sh
+.PP
+.BI duzy.sh " -o status"
+.SH DESCRIPTION
+.B duzy.sh
+wyświetla okno dialogowe zenity z listą demonów. Po dokonaniu wyboru przez użytkownika, jeśli nie została podana opcja -o, użytkownik wybiera z listy operację do wykonania, następnie podejmowana jest próba jej wykonania. Komunikaty są przekierowywane do okna informacyjnego zenity. Następnie wyświetlane jest początkowe okno.
+ W przypadku anulowania lub zamknięcia okna wyboru, skrypt kończy działanie.
+.SH OPTIONS
+.TP
+.BI -o " start|stop|status"
+ustawienie wybranej operacji na czas działania skryptu
+.TP
+.B -v
+wyświetla wersję skryptu
+.TP
+.B -h
+wyświetla pomoc
+.SH BUGS
+Błędy można zgłaszać pod adresem
+.PP
+https://github.com/kobryl/duzy_skrypt/issues
+.SH AUTHOR
+Konrad Bryłowski 188577
